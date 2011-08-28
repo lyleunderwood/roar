@@ -19,3 +19,9 @@ Roar::Representer::XML.class_eval do # FIXME: why in XML, only? #definition_clas
   include Roar::Representer::Feature::ActiveRecordMethods  # to_nested_attributes
   include Roar::Rails::RepresenterMethods
 end
+
+Roar::Representer::JSON.class_eval do
+  include Roar::Representer::Feature::ModelRepresenting
+  include Roar::Representer::Feature::ActiveRecordMethods  # to_nested_attributes
+  include Roar::Rails::RepresenterMethods
+end
